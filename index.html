@@ -13,6 +13,27 @@
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+		
+	
+	var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://idbroker.webex.com/idb/oauth2/v1/authorize?",
+  "method": "GET",
+  "dataType": "json"
+  
+ }
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+		
+		</script>
+	
 	</head>
 
 	<!-- Notice the controller directive -->
@@ -40,22 +61,5 @@
 		<!-- Include AngularJS from Google's CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 		<script src="script.js"></script>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script>
-		  $.ajax({
-                    type: 'GET',
-                    success: function(response){
-						console.log(response);
-                        if(response == 1){
-                            k = response;
-                        }
-                    },
-					error :function(error){
-						console.log(error);
-					
-					}
-
-                });
-		</script>
-	</body>
+		</body>
 </html>

@@ -1,65 +1,28 @@
 <!DOCTYPE html>
 <html>
+  <title>Cisco Spark Login</title>
+  <body>
+    <h1>Implicit Grant Flow Authentication</h1>
+	  <p>Example for authenticating users in the browser with the Implicit Grant Flow</p>
 
-	<head>
-		<meta charset="utf-8"/>
-		<title>Learn AngularJS - Inline Editor</title>
+    <form id="authorization">
+      <input id="authBtn" title="authenticate" type="submit" value="authenticate">
+      <label for="authenticate"> &lt-- click here to authenticate</label>
+    </form>
 
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+    <form id="logout">
+      <input id="logoutBtn" title="logout" type="submit" value="logout">
+      <label for="logout"> &lt-- click here to logout</label>
+    </form>
 
-		<!-- The main CSS file -->
-		<link href="style.css" rel="stylesheet" />
+    <div style="width: 30vw; display: flex; flex-direction: row; justify-content: space-between">
+      <h3>Authentication Status: </h3>
+      <h3 style="color:red" id="authentication-status">Not Authenticated</h3>
+    </div>
 
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script>
-		
-	
-	var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://idbroker.webex.com/idb/oauth2/v1/authorize?",
-  "method": "GET",
-  "dataType": "json"
-  
- }
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-
-		
-		</script>
-	
-	</head>
-
-	<!-- Notice the controller directive -->
-	<body ng-app ng-controller="InlineEditorController">
-
-		<!-- When this element is clicked, hide the tooltip -->
-		<div id="main" ng-click="hideTooltip()">
-
-			<!-- This is the tooltip. It is shown only when the showtooltip variable is truthful -->
-			<div class="tooltip" ng-click="$event.stopPropagation()" ng-show="showtooltip">
-
-				<!-- ng-model binds the contents of the text field with the "value" model.
-					 Any changes to the text field will automatically update the value, and
-					 all other bindings on the page that depend on it.  -->
-
-				<input type="text" ng-model="value" />
-			</div>
-
-			<!-- Call a method defined in the InlineEditorController that toggles
-			 the showtooltip varaible -->
-			<p ng-click="toggleTooltip($event)">{{value}}</p>
-
-		</div>
-
-		<!-- Include AngularJS from Google's CDN -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<script src="script.js"></script>
-		</body>
+    <!-- /bundle.js is the bundled CiscoSpark Browser SDK -->
+    <script src="bundle.js"></script>
+    <!-- app.js is your application code -->
+    <script src="app.js"></script>
+  </body>
 </html>
